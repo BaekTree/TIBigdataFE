@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeListContainerComponent } from './home-list-container/home-list-container.component';
-import { HomesRoutingModule } from './homes-routing.module';
+// import { HomesRoutingModule } from './homes-routing.module';
 import { CoreModule } from '../core/core.module';
 import { TagCloudModule } from 'angular-tag-cloud-module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -50,7 +50,7 @@ import { NavComponent } from './nav/nav.component';
   ],
   imports: [
     CommonModule,
-    HomesRoutingModule,
+    // HomesRoutingModule,
     CoreModule,
     FormsModule,
     ReactiveFormsModule,
