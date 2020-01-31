@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ElasticsearchService } from "../../../service/elasticsearch.service";
-import * as CanvasJS from "../../../../../../assets/canvasjs.min.js";
+import { ElasticsearchService } from "../../service/elasticsearch.service";
+import * as CanvasJS from "../../../../../../../assets/canvasjs.min.js";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({

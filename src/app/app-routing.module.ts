@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'specials',
-    loadChildren: () => import('./modules/specials/specials.module').then(m => m.SpecialsModule)
+    loadChildren: () => import('./modules/homes/body/specials/specials.module').then(m => m.SpecialsModule)
   },
   {
     path: 'membership',

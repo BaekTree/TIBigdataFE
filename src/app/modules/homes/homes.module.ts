@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeListContainerComponent } from './containers/home-list-container/home-list-container.component';
+import { HomeListContainerComponent } from './home-list-container/home-list-container.component';
 import { HomesRoutingModule } from './homes-routing.module';
 import { CoreModule } from '../core/core.module';
 import { TagCloudModule } from 'angular-tag-cloud-module';
@@ -9,20 +9,21 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { HttpModule} from '@angular/http';
 
-import { QuerytestComponent } from './containers/querytest/querytest.component';
-import { ArticleDetailsComponent } from './containers/querytest/article/article-details/article-details.component';
-import { ShowArticlesComponent } from './containers/querytest/article/show-articles/show-articles.component';
+import { QuerytestComponent } from './body/search/querytest/querytest.component';
+import { ArticleDetailsComponent } from './body/search/querytest/article/article-details/article-details.component';
+import { ShowArticlesComponent } from './body/search/querytest/article/show-articles/show-articles.component';
 
 import { FlaskComponent } from './containers/flask/flask.component';
 import { IssueComponent } from './containers/issue/issue.component';
-import { SearchComponent } from './containers/search/search.component';
-import { GraphComponent } from './containers/graph/graph.component';
-import { FooterComponent } from './containers/footer/footer.component';
-import { SearchResultComponent } from './containers/search-result/search-result.component';
-import { SearchNavComponent } from './containers/search-nav/search-nav.component';
-import { AnalysisComponent } from './containers/search-result/analysis/analysis.component';
-import { SearchFilterComponent } from './containers/search-filter/search-filter.component';
-import { WordcloudComponent } from './containers/search-result/wordcloud/wordcloud.component';
+import { SearchComponent } from './body/search/search/search.component';
+import { GraphComponent } from './body/search/graph/graph.component';
+import { FooterComponent } from './footer/footer.component';
+import { SearchResultComponent } from './body/search/search-result/search-result.component';
+import { SearchNavComponent } from './body/search/search-nav/search-nav.component';
+import { AnalysisComponent } from './body/search/search-result/analysis/analysis.component';
+import { SearchFilterComponent } from './body/search/search-filter/search-filter.component';
+import { WordcloudComponent } from './body/search/search-result/wordcloud/wordcloud.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { WordcloudComponent } from './containers/search-result/wordcloud/wordclo
     AnalysisComponent,
     SearchFilterComponent,
     WordcloudComponent,
+    NavComponent
 
    
   ],
