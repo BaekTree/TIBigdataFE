@@ -12,8 +12,9 @@ import { Subject } from 'rxjs';
 export class ElasticsearchService {
 
   private client: Client;
-  
-  private results: ArticleSource[];
+  private ES_URL : string ='http://203.252.103.86:8080';
+  private TEST_INDEX = ".monitoring-es-7-2020.01.31";
+  // private results: ArticleSource[];
   private articleSource = new Subject<ArticleSource[]>();
   articleInfo$ = this.articleSource.asObservable();
   private searchKeyword: string;
@@ -53,15 +54,15 @@ export class ElasticsearchService {
 
   fullTextSearch(_field, _queryText): any {
     return this.client.search({
-
+      index : this.TEST_INDEX,
       filterPath: ['hits.hits._source','hits.hits._id', 'hits.total', '_scroll_id'],
-      body: {
-        'query' : {
-          'match_phrase_prefix': {
-            [_field]: _queryText,
-          }
-        }
-      },
+      // body: {
+      //   'query' : {
+      //     'match_phrase_prefix': {
+      //       [_field]: _queryText,
+      //     }
+      //   }
+      // },
       '_source': ['post_title','post_date','published_institution_url','post_writer', 'post_body']
     })
   }
@@ -86,9 +87,8 @@ export class ElasticsearchService {
    //Elasticsearch Connection
 
    private _connect(){
-     let es_url='http://203.252.103.86:8080'
      this.client = new elasticsearch.Client({
-       host: es_url,
+       host: this.ES_URL,
        log: 'trace'
      });
    }
@@ -96,7 +96,7 @@ export class ElasticsearchService {
    isAvailable(): any{
      return this.client.ping({
        requestTimeout: Infinity,
-       body: 'hello! Sapphire!'
+       body: 'ES is available'
      });
    }
 }

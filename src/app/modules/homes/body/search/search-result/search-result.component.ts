@@ -57,19 +57,23 @@ export class SearchResultComponent implements OnInit {
   });
 
   ngOnInit() {
-    console.log("search result components page loaded");
+    // console.log("search result components page loaded");
 
     this.loaded = false;
     this.idList = [];
 
     this.es.articleInfo$.subscribe(articles => {
-      new Promise(r => {
-        this.articleSources = articles;
-        r();
-      }).then(() => {
-        this.showKeyword();
+      this.articleSources = articles;
+      this.loaded = true;
+      console.log("result of query : " + articles);
+    // 백엔드 서버 복구 시 주석 해제. 바로 위 두줄은 지운다.
+    //   new Promise(resolve => {
+    //     this.articleSources = articles;
+    //     resolve();
+    //   }).then(() => {
+    //     this.showKeyword();
     
-    });
+    // });
     
   })
 }

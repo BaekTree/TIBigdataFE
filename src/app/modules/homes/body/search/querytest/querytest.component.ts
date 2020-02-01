@@ -61,7 +61,8 @@ export class QuerytestComponent implements OnInit {
       body)
       .subscribe(
         (data) => {
-          console.log(data);
+          // console.log(data);
+          console.log("querytest.component");
         }
       )
   }

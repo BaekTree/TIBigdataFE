@@ -9,7 +9,7 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { SearchNavComponent } from './search-nav/search-nav.component';
 import { ArticleDetailsComponent } from './querytest/article/article-details/article-details.component';
 import { ShowArticlesComponent } from './querytest/article/show-articles/show-articles.component';
-
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { ShowArticlesComponent } from './querytest/article/show-articles/show-ar
     SearchFilterComponent,
     SearchNavComponent,
     ArticleDetailsComponent,
-    ShowArticlesComponent
+    ShowArticlesComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
