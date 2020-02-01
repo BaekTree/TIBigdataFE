@@ -57,6 +57,8 @@ export class SearchResultComponent implements OnInit {
   });
 
   ngOnInit() {
+    console.log("search result components page loaded");
+
     this.loaded = false;
     this.idList = [];
 

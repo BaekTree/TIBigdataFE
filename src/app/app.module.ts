@@ -11,17 +11,26 @@ import { AppComponent } from './app.component';
 
 // import { BodyModule } from './modules/homes/body/body.module';
 
+import { MainContainerComponent } from './modules/homes/body/main-container/main-container.component'
+import { SearchBarComponent } from './modules/homes/body/search/search-bar/search-bar.component'
+                              //'.modules/homes/body/search/search/search.component';
+// import { MainContainerComponent } from './main-container/main-container.component';
+import { MainGraphComponent } from './modules/homes/body/main-container/main-graph/main-graph.component';
+
+import { TagCloudModule } from 'angular-tag-cloud-module';
+
 import { FooterComponent } from './modules/homes/footer/footer.component';
 import { NavComponent } from './modules/homes/nav/nav.component';
-
+import {SearchModule} from './modules/homes/body/search/search.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     NavComponent,
-    // MainContainerComponent
-  
+    MainContainerComponent,
+    SearchBarComponent,
+    MainGraphComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +39,8 @@ import { NavComponent } from './modules/homes/nav/nav.component';
     // CoreModule,
     FormsModule,
     HttpModule,
+    TagCloudModule,
+    SearchModule
     // HomesModule
     // BodyModule
 
