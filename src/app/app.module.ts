@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+// import {MaterialModule} from '@angular/material';
+import { MatNativeDateModule,MatInputModule,MatFormFieldModule,MatDatepickerModule, NativeDateModule } from "@angular/material";
+// import { MatMomentDateModule } from "@angular/material-moment-adapter";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +24,7 @@ import { SearchHistoryComponent } from './modules/homes/body/main-home-container
 import { DatabaseService } from './modules/core/componets/database/database.service';
 
 import { ChartsModule } from "ng2-charts";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -34,6 +38,9 @@ import { ChartsModule } from "ng2-charts";
     SearchHistoryComponent
   ],
   imports: [
+    MatDatepickerModule, NativeDateModule ,MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -44,7 +51,8 @@ import { ChartsModule } from "ng2-charts";
     TagCloudModule,
     LibraryModule,
     CoreModule,
-    ChartsModule
+    ChartsModule,
+    BrowserAnimationsModule
 
   ],
   providers: [WordcloudService, EPAuthService, DatabaseService],

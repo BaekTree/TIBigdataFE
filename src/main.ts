@@ -1,3 +1,4 @@
+import 'hammerjs';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 // import 'core-js/es7/reflect';//id-control-service주입에 사용...
