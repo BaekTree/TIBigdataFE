@@ -77,15 +77,15 @@ export class IpService {
   }
 
   getMiddlewareServerIp(){
-    return this.FrontEnd_SERVER_IP + ":"+this.FLASK_PORT;
-    // return this.adaptIp(this.FrontEnd_SERVER_IP)+":"+this.FLASK_PORT;
+    // return this.FrontEnd_SERVER_IP + ":"+this.FLASK_PORT;
+    return this.adaptIp(this.FrontEnd_SERVER_IP)+":"+this.FLASK_PORT;
   }
 
   getBackEndServerIp(){
-    return this.BackEnd_SERVER_IP + ":"+this.ES_PORT + "/nkdb";
+    // return this.BackEnd_SERVER_IP + ":"+this.ES_PORT + "/nkdb";
 
     //use local elasticsearch
-    // return this.adaptIp(this.BackEnd_SERVER_IP) + ":"+this.ES_PORT + this.ES_INDEX;
+    return this.adaptIp(this.BackEnd_SERVER_IP) + ":"+this.ES_PORT + this.ES_INDEX;
   }
 
   getDevIp(){
