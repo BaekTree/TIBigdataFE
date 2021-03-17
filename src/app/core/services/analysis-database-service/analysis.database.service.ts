@@ -2,6 +2,7 @@ import { Injectable, Injector } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { IpService } from "src/app/core/services/ip-service/ip.service";
 import { ArticleService } from "src/app/core/services/article-service/article.service";
+import { QueryResponse } from "../../models/query.response.model";
 
 @Injectable({
   providedIn: "root",
@@ -39,10 +40,10 @@ export class AnalysisDatabaseService {
   }
 
   async getRelatedDocsTbl(ids: string | string[], num?: number, sim?: boolean) {
-    let res = await this.http
+    let res: QueryResponse = await this.http
       .post<any>(this.GET_RCMD_URL, { id: ids, num: num, sim: sim })
       .toPromise();
-    if (res.succ) {
+    if (res.isSuccess) {
       return res.payload;
     }
   }
@@ -59,17 +60,26 @@ export class AnalysisDatabaseService {
 
   async loadRelatedDocs(id: string) {
     let _rcmdIdsRes = await this.getRelatedDocsTbl(id);
+
+    console.log("idsres: ", _rcmdIdsRes);
     let rcmdIds = _rcmdIdsRes[0]["rcmd"];
+
+    console.log("rcmds: ", rcmdIds);
     let _titlesRes = await this.docControl.convertDocIdsToTitles(
       rcmdIds as string[]
     );
     let titles = _titlesRes as [];
+
+    console.log("titles: ", titles);
 
     let i = -1;
     let relatedDocs = titles.map((t) => {
       i++;
       return { id: rcmdIds[i], title: t };
     });
+
+    console.log("related: ", relatedDocs);
+
     return relatedDocs;
   }
 }
