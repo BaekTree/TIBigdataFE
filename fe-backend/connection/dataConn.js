@@ -1,8 +1,11 @@
-const mongoose = require('mongoose');
-const db = require('./config')
-const dataCollection = db+ 'analysis0919';
+const mongoose = require("mongoose");
+const db = require("./config");
+const dataCollection = db + "analysis";
 
-
-const conn = mongoose.createConnection(dataCollection);
+const conn = mongoose.createConnection(dataCollection, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 module.exports = conn;
